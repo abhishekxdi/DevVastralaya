@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Vastralaya | Fine Textiles & Ready-to-Wear Retail Store</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Playfair Display + Cormorant Garamond + Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gucci: {
+                            green: '#0b281d',      /* Deep Gucci emerald / forest green */
+                            greenLight: '#143c2c',
+                            red: '#7e1822',        /* Iconic Italian heritage crimson accent */
+                            cream: '#f9f6f0',      /* Vintage warm cream paper */
+                            sand: '#ede8dc',       /* Sand / ecru */
+                            gold: '#c5a059',       /* Antique woven gold */
+                            goldLight: '#e4c88e',
+                            charcoal: '#1a1918'    /* Soft editorial black */
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        display: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Montserrat', 'system-ui', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        'ultra-wide': '0.35em',
+                        'super-wide': '0.22em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Smooth micro-interactions */
+        ::selection {
+            background-color: #c5a059;
+            color: #0b281d;
+        }
+
+        /* Subtle luxury textile background grain */
+        .textile-bg {
+            background-color: #f9f6f0;
+            background-image: radial-gradient(#d3c9b6 0.75px, transparent 0.75px);
+            background-size: 16px 16px;
+        }
+
+        .dark-textile-bg {
+            background-color: #0b281d;
+            background-image: radial-gradient(rgba(197, 160, 89, 0.15) 0.75px, transparent 0.75px);
+            background-size: 20px 20px;
+        }
+
+        /* High-fashion decorative border ribbon */
+        .gucci-stripe {
+            background: linear-gradient(
+                to right,
+                #0b281d 0%, #0b281d 38%,
+                #7e1822 38%, #7e1822 62%,
+                #0b281d 62%, #0b281d 100%
+            );
+        }
+
+        /* Smooth image zoom effect */
+        .lookbook-card:hover .zoom-img {
+            transform: scale(1.06);
+        }
+    </style>
+</head>
+<body class="textile-bg text-gucci-charcoal antialiased overflow-x-hidden font-sans">
+
+    <!-- Top Luxury Ribbon -->
+    <div class="h-1.5 gucci-stripe w-full"></div>
+
+    <!-- Announcement Bar -->
+    <aside aria-label="Announcement" class="bg-gucci-green text-gucci-sand text-xs tracking-ultra-wide py-2 text-center uppercase font-medium border-b border-gucci-gold/20 px-4">
+        Visit Our In-Store Boutique at Jaina More, Bokaro <span class="hidden sm:inline">|</span> <span class="text-gucci-gold">NH 23 • Open All 7 Days</span>
+    </aside>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-[#f9f6f0]/95 backdrop-blur-md border-b border-gucci-sand transition-all duration-300">
+        <nav class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between">
+            <!-- Left Menu -->
+            <div class="hidden md:flex items-center space-x-8 text-xs uppercase tracking-super-wide font-medium">
+                <a href="#offers" class="hover:text-gucci-gold text-gucci-red font-semibold transition-colors duration-200">Exclusive Offers</a>
+                <a href="#collections" class="hover:text-gucci-gold transition-colors duration-200">Collections</a>
+                <a href="#craft" class="hover:text-gucci-gold transition-colors duration-200">Heritage</a>
+                <a href="#boutique" class="hover:text-gucci-gold transition-colors duration-200">Boutique & Map</a>
+            </div>
+
+            <!-- Center Brand Monogram / Logo -->
+            <a href="#" class="flex flex-col items-center group text-center mx-auto md:mx-0">
+                <div class="flex items-center space-x-3">
+                    <!-- SVG DV Luxury Monogram Medallion -->
+                    <div class="w-10 h-10 rounded-full border border-gucci-gold p-1 flex items-center justify-center bg-gucci-green text-gucci-gold shadow-sm group-hover:border-gucci-charcoal transition-all">
+                        <svg viewBox="0 0 100 100" class="w-7 h-7 fill-current" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="3 2"/>
+                            <text x="50" y="58" font-family="'Playfair Display', serif" font-size="34" font-weight="700" text-anchor="middle" letter-spacing="1">DV</text>
+                        </svg>
+                    </div>
+                    <div class="text-left">
+                        <span class="block font-serif text-xl sm:text-2xl font-bold tracking-widest text-gucci-green uppercase leading-none">Dev Vastralaya</span>
+                        <span class="text-[9px] tracking-ultra-wide uppercase text-gucci-gold block mt-0.5 font-medium">Fine Silks & Couture</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Right Actions -->
+            <div class="flex items-center space-x-5">
+                <a href="#boutique" 
+                   class="inline-flex items-center space-x-2 bg-gucci-green hover:bg-gucci-greenLight text-gucci-cream px-4 py-2 rounded-full text-xs uppercase tracking-widest font-semibold transition-all duration-300 shadow-md hover:shadow-lg border border-gucci-gold/40">
+                    <i class="fas fa-map-marker-alt text-sm text-gucci-gold"></i>
+                    <span class="hidden sm:inline">Store Location</span>
+                    <span class="sm:hidden">Visit</span>
+                </a>
+                <button id="mobileMenuBtn" aria-label="Toggle Navigation" class="md:hidden text-gucci-green text-xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-gucci-cream border-t border-gucci-sand px-6 py-5 flex flex-col space-y-4 text-xs uppercase tracking-super-wide">
+            <a href="#offers" class="hover:text-gucci-gold text-gucci-red font-bold">Festive Offers</a>
+            <a href="#collections" class="hover:text-gucci-gold">Collections</a>
+            <a href="#craft" class="hover:text-gucci-gold">Our Heritage</a>
+            <a href="#boutique" class="hover:text-gucci-gold">Visit The Boutique</a>
+            <a href="tel:+919905081679" class="hover:text-gucci-gold">Call: +91 99050 81679</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION (High-Fashion Editorial) -->
+        <section class="relative min-h-[85vh] flex items-center justify-center dark-textile-bg text-gucci-cream px-6 py-20 overflow-hidden">
+            <!-- Decorative Gold Filigree Elements -->
+            <div class="absolute inset-0 pointer-events-none opacity-10 flex items-center justify-center">
+                <div class="w-[600px] h-[600px] rounded-full border border-gucci-gold/60"></div>
+                <div class="absolute w-[800px] h-[800px] rounded-full border border-gucci-gold/30"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center">
+                <!-- Gucci Inspired Crest Badge -->
+                <div class="mb-6 inline-block">
+                    <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-gucci-gold/80 p-2 mx-auto flex items-center justify-center bg-[#071d15] shadow-2xl relative">
+                        <!-- Intricate ornamental crest -->
+                        <div class="w-full h-full rounded-full border border-dashed border-gucci-gold/50 flex flex-col items-center justify-center text-gucci-gold">
+                            <span class="font-display text-4xl sm:text-5xl font-bold tracking-tight italic">DV</span>
+                            <span class="text-[8px] tracking-ultra-wide uppercase font-semibold text-gucci-sand">RETAIL STORE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-xs sm:text-sm tracking-ultra-wide uppercase text-gucci-gold mb-3 font-medium">Bokaro's Premier Textile Destination</p>
+                
+                <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-gucci-sand uppercase mb-6 leading-none">
+                    Dev Vastralaya
+                </h1>
+
+                <div class="w-24 h-0.5 bg-gucci-gold mx-auto mb-6"></div>
+
+                <p class="font-display italic text-lg sm:text-2xl text-gucci-sand/90 max-w-2xl leading-relaxed font-light mb-4">
+                    Complete Family Retail Store for Men, Women & Kids
+                </p>
+
+                <p class="text-xs sm:text-sm text-stone-300 max-w-xl leading-relaxed uppercase tracking-widest font-normal mb-10">
+                    A premier retail clothing store offering every variety of apparel — from exquisite women's sarees & lehengas to classic menswear, suiting, and children's collections.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 items-center justify-center w-full sm:w-auto">
+                    <a href="#collections" 
+                       class="w-full sm:w-auto px-8 py-3.5 bg-gucci-gold hover:bg-gucci-goldLight text-gucci-green text-xs font-semibold uppercase tracking-super-wide rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Discover Collections
+                    </a>
+                    <a href="#boutique" 
+                       class="w-full sm:w-auto px-8 py-3.5 border border-gucci-gold/70 hover:bg-gucci-gold/10 text-gucci-cream text-xs font-semibold uppercase tracking-super-wide rounded-full transition-all duration-300 flex items-center justify-center space-x-2">
+                        <i class="fas fa-compass text-gucci-gold text-sm"></i>
+                        <span>Visit Store in Jaina More</span>
+                    </a>
+                </div>
+
+                <!-- Trust Bar -->
+                <div class="mt-14 pt-8 border-t border-gucci-gold/20 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center text-gucci-sand/80 text-[11px] uppercase tracking-widest w-full">
+                    <div>
+                        <span class="block font-serif text-xl text-gucci-gold font-bold">5.0 ★</span>
+                        <span>Google Maps Rating</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-xl text-gucci-gold font-bold">100%</span>
+                        <span>Authentic Fabrics</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-xl text-gucci-gold font-bold">10+ Yrs</span>
+                        <span>Heritage & Trust</span>
+                    </div>
+                    <div>
+                        <span class="block font-serif text-xl text-gucci-gold font-bold">NH 23</span>
+                        <span>Jaina More, Bokaro</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LUXURY OFFERS & DEALS SLIDER (Auto-Slide + Manual Controls) -->
+        <section id="offers" class="py-14 bg-gradient-to-b from-gucci-green to-[#071d15] text-gucci-cream border-y-2 border-gucci-gold/40 relative overflow-hidden">
+            <div class="max-w-6xl mx-auto px-6">
+                <!-- Section Title -->
+                <div class="text-center mb-8">
+                    <span class="inline-flex items-center space-x-2 bg-gucci-red text-white text-[10px] uppercase tracking-ultra-wide font-bold px-3 py-1 rounded-full shadow">
+                        <i class="fas fa-fire-alt animate-bounce"></i>
+                        <span>Limited Period Showcase</span>
+                    </span>
+                    <h2 class="font-serif text-2xl sm:text-4xl text-gucci-gold mt-2 font-bold uppercase tracking-wide">
+                        Exclusive Store Offers & Privileges
+                    </h2>
+                    <p class="text-xs text-stone-300 tracking-widest uppercase mt-1">Special in-store festive celebrations & bespoke savings</p>
+                </div>
+
+                <!-- Carousel Frame -->
+                <div class="relative max-w-4xl mx-auto">
+                    <!-- Slides Container -->
+                    <div id="offersSlider" class="overflow-hidden rounded-2xl border border-gucci-gold/50 bg-[#0a241b] shadow-2xl relative min-h-[220px] flex items-center">
+                        
+                        <!-- SLIDE 1: Diwali Sale (Active) -->
+                        <div class="offer-slide w-full transition-opacity duration-700 p-8 sm:p-12 text-center flex flex-col items-center justify-center">
+                            <span class="text-gucci-gold text-xs uppercase tracking-super-wide font-semibold block mb-1">
+                                ✨ Royal Celebration Special ✨
+                            </span>
+                            <h3 class="font-serif text-3xl sm:text-5xl text-white font-extrabold tracking-tight uppercase mb-3">
+                                Diwali Sale Is Live
+                            </h3>
+                            <p class="font-display italic text-lg sm:text-xl text-gucci-sand max-w-xl mb-6">
+                                Flat festive privileges on pure silk sarees, bespoke suit lengths, and bridal trousseau sets. In-store only.
+                            </p>
+                            <a href="#boutique" 
+                               class="inline-flex items-center space-x-2 bg-gucci-gold hover:bg-gucci-goldLight text-gucci-green px-6 py-2.5 rounded-full text-xs uppercase font-bold tracking-widest transition-all transform hover:scale-105 shadow-lg">
+                                <i class="fas fa-map-marker-alt text-sm"></i>
+                                <span>Visit Store For Offers</span>
+                            </a>
+                        </div>
+
+                        <!-- SLIDE 2: Blank / Customizable Future Offer 1 -->
+                        <div class="offer-slide w-full transition-opacity duration-700 p-8 sm:p-12 text-center flex flex-col items-center justify-center hidden">
+                            <span class="text-gucci-gold text-xs uppercase tracking-super-wide font-semibold block mb-1">
+                                🌟 Wedding Season Capsule 🌟
+                            </span>
+                            <!-- YOU CAN EDIT THIS TITLE LATER -->
+                            <h3 class="font-serif text-3xl sm:text-5xl text-white font-extrabold tracking-tight uppercase mb-3">
+                                Special Festive Offer Coming Soon
+                            </h3>
+                            <!-- YOU CAN EDIT THIS DESCRIPTION LATER -->
+                            <p class="font-display italic text-lg sm:text-xl text-gucci-sand max-w-xl mb-6">
+                                Exclusive combo sets on Raymond suiting, Sherwani lengths, and Banarasi drapes.
+                            </p>
+                            <a href="#boutique" 
+                               class="inline-flex items-center space-x-2 bg-gucci-gold hover:bg-gucci-goldLight text-gucci-green px-6 py-2.5 rounded-full text-xs uppercase font-bold tracking-widest transition-all">
+                                <i class="fas fa-store text-sm"></i>
+                                <span>Explore In Store</span>
+                            </a>
+                        </div>
+
+                        <!-- SLIDE 3: Blank / Customizable Future Offer 2 -->
+                        <div class="offer-slide w-full transition-opacity duration-700 p-8 sm:p-12 text-center flex flex-col items-center justify-center hidden">
+                            <span class="text-gucci-gold text-xs uppercase tracking-super-wide font-semibold block mb-1">
+                                💎 In-Store Exclusive 💎
+                            </span>
+                            <!-- YOU CAN EDIT THIS TITLE LATER -->
+                            <h3 class="font-serif text-3xl sm:text-5xl text-white font-extrabold tracking-tight uppercase mb-3">
+                                New Season Arrivals
+                            </h3>
+                            <!-- YOU CAN EDIT THIS DESCRIPTION LATER -->
+                            <p class="font-display italic text-lg sm:text-xl text-gucci-sand max-w-xl mb-6">
+                                Visit our boutique on NH 23, Jaina More for handpicked bridal weaves and personal fabric viewing.
+                            </p>
+                            <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJH3sf69I99DkRaT7FL1c6V5Y" 
+                               target="_blank" 
+                               rel="noopener noreferrer"
+                               class="inline-flex items-center space-x-2 bg-gucci-gold hover:bg-gucci-goldLight text-gucci-green px-6 py-2.5 rounded-full text-xs uppercase font-bold tracking-widest transition-all">
+                                <i class="fas fa-map-marker-alt text-sm"></i>
+                                <span>Visit Store in Jaina More</span>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- Slide Navigation Arrows -->
+                    <button id="prevOfferBtn" aria-label="Previous Offer" class="absolute left-2 sm:-left-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gucci-green/90 border border-gucci-gold text-gucci-gold flex items-center justify-center hover:bg-gucci-gold hover:text-gucci-green transition-all shadow-xl z-20">
+                        <i class="fas fa-chevron-left text-sm"></i>
+                    </button>
+                    <button id="nextOfferBtn" aria-label="Next Offer" class="absolute right-2 sm:-right-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-gucci-green/90 border border-gucci-gold text-gucci-gold flex items-center justify-center hover:bg-gucci-gold hover:text-gucci-green transition-all shadow-xl z-20">
+                        <i class="fas fa-chevron-right text-sm"></i>
+                    </button>
+
+                    <!-- Dot Indicators -->
+                    <div class="flex justify-center items-center space-x-2 mt-4" id="sliderDots">
+                        <button class="w-3 h-3 rounded-full bg-gucci-gold transition-all duration-300" data-slide="0"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-stone-600 transition-all duration-300" data-slide="1"></button>
+                        <button class="w-2.5 h-2.5 rounded-full bg-stone-600 transition-all duration-300" data-slide="2"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDITORIAL STATEMENT -->
+        <section class="py-16 bg-gucci-cream border-b border-gucci-sand text-center px-6">
+            <div class="max-w-3xl mx-auto">
+                <span class="text-gucci-red text-xs uppercase tracking-ultra-wide font-semibold block mb-2">Exquisite Drapery & Suiting</span>
+                <h2 class="font-serif text-2xl sm:text-3xl md:text-4xl text-gucci-green font-normal leading-snug">
+                    Curated fabrics crafted for grand weddings, festive celebrations, and discerning sartorial connoisseurs.
+                </h2>
+            </div>
+        </section>
+
+        <!-- CURATED COLLECTIONS GRID (Gucci Lookbook Style) -->
+        <section id="collections" class="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-4 border-b border-gucci-sand">
+                <div>
+                    <span class="text-xs uppercase tracking-ultra-wide text-gucci-gold font-semibold block mb-1">Lookbook Showcase</span>
+                    <h3 class="font-serif text-3xl sm:text-4xl text-gucci-green font-bold uppercase tracking-tight">The Signature Edits</h3>
+                </div>
+                <p class="text-xs text-stone-500 uppercase tracking-widest mt-3 md:mt-0 max-w-xs text-left md:text-right">
+                    Exclusive collections available directly in-store at Jaina More.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1: Royal Sarees -->
+                <article class="lookbook-card group bg-white border border-gucci-sand rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between">
+                    <div class="relative overflow-hidden aspect-[3/4] bg-stone-100">
+                        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80" 
+                             alt="Pure Banarasi and Kanjivaram Sarees" 
+                             class="zoom-img w-full h-full object-cover transition-transform duration-700"
+                             loading="lazy"
+                             onerror="this.src='https://placehold.co/600x800/0b281d/c5a059?text=Royal+Silks'">
+                        <div class="absolute top-3 right-3 bg-gucci-green/90 text-gucci-gold text-[10px] tracking-wider uppercase font-semibold px-2.5 py-1 rounded-full">
+                            Boutique Exclusive
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-ultra-wide text-gucci-gold font-bold">Couture Edit</span>
+                            <h4 class="font-serif text-xl text-gucci-green font-semibold mt-1 mb-2">Heritage Silks & Sarees</h4>
+                            <p class="text-xs text-stone-600 leading-relaxed font-light">
+                                Authentic Banarasi, pure Kanjivaram drapes, embroidered georgettes, and bridal handlooms.
+                            </p>
+                        </div>
+                        <a href="#boutique" 
+                           class="mt-5 w-full py-2.5 text-center text-[11px] uppercase tracking-widest font-semibold border border-gucci-green hover:bg-gucci-green hover:text-white rounded-lg transition-colors flex items-center justify-center space-x-2">
+                            <span>View In Boutique</span>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 2: Men's Suiting & Sherwani Fabrics -->
+                <article class="lookbook-card group bg-white border border-gucci-sand rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between">
+                    <div class="relative overflow-hidden aspect-[3/4] bg-stone-100">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80" 
+                             alt="Bespoke Suit Lengths and Raymond Fabrics" 
+                             class="zoom-img w-full h-full object-cover transition-transform duration-700"
+                             loading="lazy"
+                             onerror="this.src='https://placehold.co/600x800/0b281d/c5a059?text=Bespoke+Suiting'">
+                        <div class="absolute top-3 right-3 bg-gucci-green/90 text-gucci-gold text-[10px] tracking-wider uppercase font-semibold px-2.5 py-1 rounded-full">
+                            Premium Mill
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-ultra-wide text-gucci-gold font-bold">Gentlemen's Sartorial</span>
+                            <h4 class="font-serif text-xl text-gucci-green font-semibold mt-1 mb-2">Bespoke Suiting & Shirting</h4>
+                            <p class="text-xs text-stone-600 leading-relaxed font-light">
+                                Superfine Italian worsted wools, linen blends, Raymond & Siyaram lengths for bespoke tailoring.
+                            </p>
+                        </div>
+                        <a href="#boutique" 
+                           class="mt-5 w-full py-2.5 text-center text-[11px] uppercase tracking-widest font-semibold border border-gucci-green hover:bg-gucci-green hover:text-white rounded-lg transition-colors flex items-center justify-center space-x-2">
+                            <span>View In Boutique</span>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 3: Festive & Bridal Wear -->
+                <article class="lookbook-card group bg-white border border-gucci-sand rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between">
+                    <div class="relative overflow-hidden aspect-[3/4] bg-stone-100">
+                        <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80" 
+                             alt="Festive Lehengas and Bridal Outfits" 
+                             class="zoom-img w-full h-full object-cover transition-transform duration-700"
+                             loading="lazy"
+                             onerror="this.src='https://placehold.co/600x800/0b281d/c5a059?text=Bridal+Wear'">
+                        <div class="absolute top-3 right-3 bg-gucci-green/90 text-gucci-gold text-[10px] tracking-wider uppercase font-semibold px-2.5 py-1 rounded-full">
+                            Celebration
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-ultra-wide text-gucci-gold font-bold">Festive Capsule</span>
+                            <h4 class="font-serif text-xl text-gucci-green font-semibold mt-1 mb-2">Bridal & Celebration Wear</h4>
+                            <p class="text-xs text-stone-600 leading-relaxed font-light">
+                                Grand lehengas, intricately woven dupattas, festive kurtas, and traditional trousseau ensembles.
+                            </p>
+                        </div>
+                        <a href="#boutique" 
+                           class="mt-5 w-full py-2.5 text-center text-[11px] uppercase tracking-widest font-semibold border border-gucci-green hover:bg-gucci-green hover:text-white rounded-lg transition-colors flex items-center justify-center space-x-2">
+                            <span>View In Boutique</span>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Card 4: Daily Luxury & Handloom Cottons -->
+                <article class="lookbook-card group bg-white border border-gucci-sand rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col justify-between">
+                    <div class="relative overflow-hidden aspect-[3/4] bg-stone-100">
+                        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=800&q=80" 
+                             alt="Pure Handloom and Organic Cottons" 
+                             class="zoom-img w-full h-full object-cover transition-transform duration-700"
+                             loading="lazy"
+                             onerror="this.src='https://placehold.co/600x800/0b281d/c5a059?text=Handloom+Fabrics'">
+                        <div class="absolute top-3 right-3 bg-gucci-green/90 text-gucci-gold text-[10px] tracking-wider uppercase font-semibold px-2.5 py-1 rounded-full">
+                            Pure Natural
+                        </div>
+                    </div>
+                    <div class="p-6 flex flex-col flex-grow justify-between">
+                        <div>
+                            <span class="text-[10px] uppercase tracking-ultra-wide text-gucci-gold font-bold">Everyday Elegance</span>
+                            <h4 class="font-serif text-xl text-gucci-green font-semibold mt-1 mb-2">Handloom & Linen Edit</h4>
+                            <p class="text-xs text-stone-600 leading-relaxed font-light">
+                                Breathable Chanderi, organic weaves, and fine cottons tailored for daily sophistication and comfort.
+                            </p>
+                        </div>
+                        <a href="#boutique" 
+                           class="mt-5 w-full py-2.5 text-center text-[11px] uppercase tracking-widest font-semibold border border-gucci-green hover:bg-gucci-green hover:text-white rounded-lg transition-colors flex items-center justify-center space-x-2">
+                            <span>View In Boutique</span>
+                            <i class="fas fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- HERITAGE & CRAFTSMANSHIP (About) -->
+        <section id="craft" class="py-20 bg-[#f4f0e8] border-y border-gucci-sand">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-xs uppercase tracking-ultra-wide text-gucci-red font-bold">A Legacy of Distinction</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-gucci-green font-bold uppercase leading-tight">
+                        Crafting Elegance in Bokaro for Over a Decade
+                    </h2>
+                    <p class="text-stone-700 leading-relaxed text-sm font-light">
+                        Located centrally on National Highway 23 at Jaina More, <strong>Dev Vastralaya</strong> has served families with uncompromising textile integrity for over 10 years. We hand-select genuine weaves from historic handloom clusters coupled with the finest suiting mills across the nation.
+                    </p>
+                    <p class="text-stone-700 leading-relaxed text-sm font-light">
+                        Whether dressing the groom for their wedding night or preparing custom ensembles for milestone occasions, our store delivers an unmatched personalized shopping experience rooted in tradition and luxury aesthetics.
+                    </p>
+
+                    <div class="pt-4 grid grid-cols-3 gap-6 border-t border-gucci-sand">
+                        <div>
+                            <span class="block font-serif text-2xl text-gucci-green font-bold">10+</span>
+                            <span class="text-[10px] uppercase tracking-wider text-stone-500">Years of Service</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-2xl text-gucci-green font-bold">5.0 ★</span>
+                            <span class="text-[10px] uppercase tracking-wider text-stone-500">Google Verified</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-2xl text-gucci-green font-bold">1000s</span>
+                            <span class="text-[10px] uppercase tracking-wider text-stone-500">Happy Families</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Editorial Visual Collage -->
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden border-2 border-gucci-gold/40 shadow-2xl bg-white p-3">
+                        <img src="https://images.unsplash.com/photo-1544441893-675973e31985?auto=format&fit=crop&w=1000&q=80" 
+                             alt="Luxury fabric craftsmanship and rolls" 
+                             class="w-full h-96 object-cover rounded-xl"
+                             loading="lazy"
+                             onerror="this.src='https://placehold.co/800x600/0b281d/c5a059?text=Textile+Artistry'">
+                    </div>
+                    <div class="hidden sm:block absolute -bottom-6 -left-6 bg-gucci-green text-gucci-sand p-6 rounded-2xl shadow-xl border border-gucci-gold/30 max-w-xs">
+                        <p class="font-serif italic text-base text-gucci-gold">"Quality is remembered long after the price is forgotten."</p>
+                        <span class="block text-[10px] tracking-widest uppercase mt-2 text-stone-300">— The Dev Vastralaya Philosophy</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOUTIQUE VISIT & CONTACT SECTION -->
+        <section id="boutique" class="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs uppercase tracking-ultra-wide text-gucci-gold font-bold block mb-1">Plan Your Visit</span>
+                <h3 class="font-serif text-3xl sm:text-4xl text-gucci-green font-bold uppercase">The Boutique & Atelier</h3>
+                <div class="w-16 h-0.5 bg-gucci-gold mx-auto my-4"></div>
+                <p class="text-xs text-stone-600 uppercase tracking-widest">
+                    Experience the tactile luxury of our handpicked collections in person.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+                <!-- Location Details & VIP Concierge Card -->
+                <div class="lg:col-span-5 bg-gucci-green text-gucci-cream rounded-3xl p-8 sm:p-10 shadow-xl border border-gucci-gold/30 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span class="text-xs uppercase tracking-widest text-gucci-gold font-semibold">Store Open Today: 9:00 AM – 9:30 PM</span>
+                        </div>
+
+                        <h4 class="font-serif text-2xl font-bold uppercase text-gucci-sand mb-6">Dev Vastralaya</h4>
+
+                        <!-- Address Block -->
+                        <div class="space-y-4 text-xs text-stone-300">
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-map-marker-alt text-gucci-gold mt-1 text-sm"></i>
+                                <div>
+                                    <strong class="text-gucci-sand uppercase tracking-wider block mb-0.5">Physical Address</strong>
+                                    <p class="leading-relaxed">National Highway 23, Jaina More,<br>Bokaro Steel City, Jharkhand — 829301</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-clock text-gucci-gold mt-1 text-sm"></i>
+                                <div>
+                                    <strong class="text-gucci-sand uppercase tracking-wider block mb-0.5">Operating Hours</strong>
+                                    <p class="leading-relaxed">Monday to Sunday: 9:00 AM – 9:30 PM</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3">
+                                <i class="fas fa-phone-alt text-gucci-gold mt-1 text-sm"></i>
+                                <div>
+                                    <strong class="text-gucci-sand uppercase tracking-wider block mb-0.5">Direct Line</strong>
+                                    <p class="leading-relaxed"><a href="tel:+919905081679" class="hover:text-gucci-gold transition-colors">+91 99050 81679</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Actions (WhatsApp + Google Maps) -->
+                    <div class="mt-8 pt-6 border-t border-gucci-gold/20 space-y-3">
+                        <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJH3sf69I99DkRaT7FL1c6V5Y" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="w-full py-3.5 bg-gucci-gold hover:bg-gucci-goldLight text-gucci-green rounded-xl text-xs uppercase tracking-super-wide font-bold transition-all flex items-center justify-center space-x-2 shadow-md">
+                            <i class="fas fa-directions text-base"></i>
+                            <span>Get Google Maps Directions</span>
+                        </a>
+
+                        <a href="https://wa.me/919905081679?text=Hello%20Dev%20Vastralaya,%20I%20wanted%20to%20know%20your%20shop%20timings%20and%20location." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="w-full py-3.5 bg-emerald-700/80 hover:bg-emerald-600 text-white rounded-xl text-xs uppercase tracking-super-wide font-bold transition-all flex items-center justify-center space-x-2 border border-emerald-500/40">
+                            <i class="fab fa-whatsapp text-base"></i>
+                            <span>Store Timing & Location Info</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Embed Frame -->
+                <div class="lg:col-span-7 bg-white rounded-3xl overflow-hidden border border-gucci-sand shadow-lg flex flex-col">
+                    <div class="p-4 bg-gucci-sand/40 border-b border-gucci-sand flex items-center justify-between text-xs">
+                        <div class="flex items-center space-x-2 text-gucci-green font-medium">
+                            <i class="fas fa-compass text-gucci-gold"></i>
+                            <span>Interactive Route Guide: NH 23, Jaina More</span>
+                        </div>
+                        <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJH3sf69I99DkRaT7FL1c6V5Y" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="text-gucci-gold hover:underline text-[11px] font-semibold uppercase">
+                            Open in Maps App <i class="fas fa-external-link-alt text-[9px]"></i>
+                        </a>
+                    </div>
+                    <div class="relative w-full h-[380px] lg:h-full min-h-[350px]">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=National+Highway+23,+Jaina+More,+Bokaro+Steel+City,+Jharkhand+829301&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                            class="w-full h-full border-0" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Dev Vastralaya Location Map">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LUXURY VIP INQUIRY BANNER -->
+        <section class="bg-gucci-green text-gucci-sand py-16 px-6 text-center border-t border-gucci-gold/30">
+            <div class="max-w-3xl mx-auto space-y-6">
+                <span class="text-gucci-gold text-xs uppercase tracking-ultra-wide font-bold">In-Person Tailoring & Drapery</span>
+                <h3 class="font-serif text-3xl sm:text-4xl text-gucci-cream font-light">Experience Our Handpicked Weaves in Person</h3>
+                <p class="text-xs text-stone-300 uppercase tracking-widest max-w-xl mx-auto">
+                    Visit Dev Vastralaya at Jaina More to feel the pure silk texture, examine bespoke suit lengths, and explore festival offers in our showroom.
+                </p>
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJH3sf69I99DkRaT7FL1c6V5Y" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center space-x-3 px-8 py-4 bg-gucci-gold hover:bg-gucci-goldLight text-gucci-green text-xs font-bold uppercase tracking-super-wide rounded-full shadow-2xl transition-all transform hover:scale-105">
+                        <i class="fas fa-map-marked-alt text-base"></i>
+                        <span>Get Directions on Google Maps</span>
+                    </a>
+                    <a href="tel:+919905081679" 
+                       class="inline-flex items-center space-x-3 px-8 py-4 border border-gucci-gold/60 hover:bg-gucci-gold/10 text-gucci-cream text-xs font-bold uppercase tracking-super-wide rounded-full transition-all">
+                        <i class="fas fa-phone-alt text-sm text-gucci-gold"></i>
+                        <span>Call Store (+91 99050 81679)</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#061711] text-stone-400 py-16 px-6 lg:px-12 border-t border-gucci-gold/20">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            <!-- Brand Column -->
+            <div class="md:col-span-2 space-y-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full border border-gucci-gold flex items-center justify-center text-gucci-gold font-serif font-bold text-sm">
+                        DV
+                    </div>
+                    <span class="font-serif text-xl font-bold uppercase tracking-widest text-gucci-sand">Dev Vastralaya</span>
+                </div>
+                <p class="text-xs text-stone-400 font-light max-w-md leading-relaxed">
+                    Celebrated purveyors of authentic handloom sarees, bespoke suit lengths, and celebratory textiles in Jaina More, Bokaro. Upholding traditional fabric heritage with contemporary panache.
+                </p>
+
+                <!-- SOCIAL MEDIA CONNECT BAR (Easily add your links anytime!) -->
+                <div class="pt-3">
+                    <span class="text-[11px] uppercase tracking-ultra-wide text-gucci-gold block mb-3 font-semibold">Connect With Us Online</span>
+                    <div class="flex flex-wrap items-center gap-3">
+                        <!-- Instagram -->
+                        <a href="#" 
+                           title="Follow us on Instagram (Add your link in href)"
+                           class="w-10 h-10 rounded-full border border-gucci-gold/60 bg-[#0e2c21] text-pink-400 flex items-center justify-center hover:bg-gradient-to-tr hover:from-amber-500 hover:to-purple-600 hover:text-white hover:border-transparent transition-all shadow-md group">
+                            <i class="fab fa-instagram text-lg group-hover:scale-110 transition-transform"></i>
+                        </a>
+
+                        <!-- WhatsApp Direct (Store Timing & Route Help) -->
+                        <a href="https://wa.me/919905081679?text=Hello%20Dev%20Vastralaya,%20I%20wanted%20to%20know%20your%20shop%20timings%20and%20location." 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           title="Store Info: +91 9905081679"
+                           class="w-10 h-10 rounded-full border border-gucci-gold/60 bg-[#0e2c21] text-emerald-400 flex items-center justify-center hover:bg-emerald-600 hover:text-white hover:border-transparent transition-all shadow-md group">
+                            <i class="fab fa-whatsapp text-lg group-hover:scale-110 transition-transform"></i>
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="#" 
+                           title="Watch on YouTube (Add your channel link in href)"
+                           class="w-10 h-10 rounded-full border border-gucci-gold/60 bg-[#0e2c21] text-red-500 flex items-center justify-center hover:bg-red-600 hover:text-white hover:border-transparent transition-all shadow-md group">
+                            <i class="fab fa-youtube text-lg group-hover:scale-110 transition-transform"></i>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a href="#" 
+                           title="Connect on Facebook (Add your page link in href)"
+                           class="w-10 h-10 rounded-full border border-gucci-gold/60 bg-[#0e2c21] text-blue-400 flex items-center justify-center hover:bg-blue-600 hover:text-white hover:border-transparent transition-all shadow-md group">
+                            <i class="fab fa-facebook-f text-base group-hover:scale-110 transition-transform"></i>
+                        </a>
+
+                        <!-- Google Maps Instant Open -->
+                        <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJH3sf69I99DkRaT7FL1c6V5Y" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           title="Open Google Maps Location (National Highway 23, Jaina More)"
+                           class="w-10 h-10 rounded-full border border-gucci-gold/60 bg-[#0e2c21] text-amber-300 flex items-center justify-center hover:bg-amber-600 hover:text-white hover:border-transparent transition-all shadow-md group">
+                            <i class="fas fa-map-marked-alt text-base group-hover:scale-110 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Navigation -->
+            <div class="space-y-3">
+                <span class="text-xs uppercase tracking-ultra-wide text-gucci-gold font-semibold block">Navigation</span>
+                <ul class="text-xs space-y-2 uppercase tracking-wider text-stone-400">
+                    <li><a href="#offers" class="hover:text-gucci-gold transition-colors text-amber-200">Current Offers</a></li>
+                    <li><a href="#collections" class="hover:text-gucci-gold transition-colors">Curated Collections</a></li>
+                    <li><a href="#craft" class="hover:text-gucci-gold transition-colors">Our Craft & Heritage</a></li>
+                    <li><a href="#boutique" class="hover:text-gucci-gold transition-colors">Boutique & Map</a></li>
+                    <li><a href="tel:+919905081679" class="hover:text-gucci-gold transition-colors">Call Store</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Summary -->
+            <div class="space-y-3">
+                <span class="text-xs uppercase tracking-ultra-wide text-gucci-gold font-semibold block">Store Location</span>
+                <p class="text-xs text-stone-400 leading-relaxed">
+                    National Highway 23, Jaina More,<br>
+                    Bokaro Steel City, Jharkhand 829301<br>
+                    <span class="text-gucci-sand block mt-2 font-medium">Inquiry Line:</span>
+                    <a href="tel:+919905081679" class="text-gucci-gold hover:underline">+91 99050 81679</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between text-[11px] text-stone-500 uppercase tracking-widest">
+            <p>© <span id="year"></span> Dev Vastralaya. All Rights Reserved.</p>
+            <p class="mt-2 sm:mt-0 text-stone-600">Pure Retail Store Experience • Visit Us In Jaina More</p>
+        </div>
+    </footer>
+
+    <!-- Floating Direct Directions Action Button -->
+    <aside aria-label="Quick Directions" class="fixed bottom-6 right-6 z-50">
+        <a href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJH3sf69I99DkRaT7FL1c6V5Y" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           aria-label="Get Directions on Google Maps"
+           class="flex items-center space-x-2 bg-gucci-gold hover:bg-gucci-goldLight text-gucci-green px-4 py-3 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 border border-gucci-green">
+            <i class="fas fa-directions text-lg"></i>
+            <span class="text-xs uppercase tracking-wider font-bold pr-1 hidden sm:inline">Get Directions</span>
+        </a>
+    </aside>
+
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Responsive Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Auto-close menu when link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Offers Carousel Controller (Auto-slide + Click control)
+        const slides = document.querySelectorAll('.offer-slide');
+        const dots = document.querySelectorAll('#sliderDots button');
+        const prevBtn = document.getElementById('prevOfferBtn');
+        const nextBtn = document.getElementById('nextOfferBtn');
+        let currentSlide = 0;
+        let slideTimer;
+
+        function showSlide(index) {
+            slides.forEach((s, i) => {
+                if (i === index) {
+                    s.classList.remove('hidden');
+                } else {
+                    s.classList.add('hidden');
+                }
+            });
+
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.className = 'w-4 h-2.5 rounded-full bg-gucci-gold transition-all duration-300';
+                } else {
+                    dot.className = 'w-2.5 h-2.5 rounded-full bg-stone-600 transition-all duration-300';
+                }
+            });
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let nextIndex = (currentSlide + 1) % slides.length;
+            showSlide(nextIndex);
+        }
+
+        function prevSlide() {
+            let prevIndex = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prevIndex);
+        }
+
+        function resetTimer() {
+            clearInterval(slideTimer);
+            slideTimer = setInterval(nextSlide, 4500); // 4.5 seconds per slide
+        }
+
+        if (slides.length > 0) {
+            showSlide(0);
+            resetTimer();
+
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    nextSlide();
+                    resetTimer();
+                });
+            }
+
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    prevSlide();
+                    resetTimer();
+                });
+            }
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', (e) => {
+                    const slideIdx = parseInt(e.target.getAttribute('data-slide'));
+                    showSlide(slideIdx);
+                    resetTimer();
+                });
+            });
+        }
+    </script>
+</body>
+</html>
